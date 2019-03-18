@@ -1,231 +1,116 @@
-# a4-data-wrangling
+# A4 Data Wrangling
 
-# Before you get started, set your working directory using the Session menu.
-# While we (mostly) don't require specific variable names, we will be checking
-# your code (structure + style) as well as your output. The .csv files you save 
-# must have the described format/column names, and the file name provided. 
-# For all .csv file, make sure to exclude rownames, and write them to the 
-# a folder called `output/` which you will create below.
+# Loading and Exploring Data -------------------------------- (**28 points**)
 
-################################### Set up ###################################
+# To begin, you'll need to download the Kickstarter Projects data from the
+# Kaggle website: https://www.kaggle.com/kemical/kickstarter-projects
+# Download the `ks-projects-201801.csv` file into a new folder called `data/`
 
-# Install (if not installed) + load dplyr package 
+# Load the `dplyr` package
 
+# Load your data, making sure to not interpret strings as factors
 
-# Read in `any_drinking.csv` data using a *relative path*
 
-# Read in `binge.drinking.csv` data using a *relative path*
+# To start, write the code to get some basic information about the dataframe:
+# - What are the column names?
+# - How many rows is the data frame?
+# - How many columns are in the data frame?
 
-# Create a directory (using R) called "output" in your project directory
-# Make sure to *suppress any warnings*, in case the directory already exists
-# You must save all .csv files in this directory (last reminder!)
+# Use the `summary` function to get some summary information
 
-############################# Any drinking in 2012 #############################
 
-# For this first section, you will work only with the *any drinking* dataset.
-# In particular, we'll focus on data from 2012. All output should include only 
-# the relevant 2012 columns (as well as `state` + `location`), described below. 
+# Unfortunately, this doesn't give us a great set of insights. Let's write a
+# few functions to try and do this better.
+# First, let's write a function `get_col_info()` that takes as parameters a
+# column name and a dataframe. If the values in the column are *numeric*,
+# the function should return a list with the keys:
+# - `min`: the minimum value of the column
+# - `max`: the maximum value of the column
+# - `mean`: the mean value of the column
+# If the column is *not* numeric and there are fewer than 10 unique values in
+# the column, you should return a list with the keys:
+# - `n_values`: the number of unique values in the column
+# - `unique_values`: a vector of each unique value in the column
+# If the column is *not* numeric and there are *more* than 10 unique values in
+# the column, you should return a list with the keys:
+# - `n_values`: the number of unique values in the column
+# - `unique_values`: a vector of each unique value in the column
 
 
-# Create a new data.frame that has the `state` and `location` columns, 
-# and all columns with data from 2012. you will use this dataframe throughout 
-# the rest of this section.
+# Demonstrate that your function works by passing a column name of your choice
+# and the kickstarter data to your function. Store the result in a variable
+# with a meaningful name
 
 
-# Using the (new) 2012 data, create a column `diff` that has 
-# the difference in male and female drinking rates
+# To take this one step further, write a function `get_summary_info()`,
+# that takes in a data frame  and returns a *list* of information for each
+# column (where the *keys* of the returned list are the column names, and the
+# _values_ are the summary information returned by the `get_col_info()` function
+# The suggested approach is to use the appropriate `*apply` method to
+# do this, though you can write a loop
 
 
-# Write your data to a file `diff_2012.csv` (in your `output/` directory)
-# Make sure to exclude rownames (for all .csv files! -- last reminder).
+# Demonstrate that your function works by passing the kickstarter data
+# into it and saving the result in a variable
 
 
-# To answer "Are there any locations where females drink more than males"?
-# Create a new dataframe by filtering the 2012 dataframe to the rows that 
-# meet the criterion. Keep only the `state`, `location`, and column of interest. 
-# Write your answer to `more_f_than_m.csv`.
+# Take note of 3 observations that you find interesting from this summary
+# information (and/or questions that arise that want to investigate further)
+# YOUR COMMENTS HERE
+# LIKELY ON MULTIPLE LINES
 
+# Asking questions of the data ----------------------------- (**29 points**)
 
-# To answer the question: "What is the location in which male and female 
-# drinking rates are most similar", create a new dataframe by filtering the 2012 
-# dataframe to the rows that meet the criterion. Keep only the `state`, 
-# `location`, and column of interest.Write your answer to `most_similar.csv`.
+# Write the appropriate dplyr code to answer each one of the following questions
+# Make sure to return (only) the desired value of interest (e.g., use `pull()`)
+# Store the result of each question in a variable with a clear + expressive name
+# If there are multiple observations that meet each condition, the results
+# can be in a vector. Make sure to *handle NA values* throughout!
+# You should answer each question using a single statement with multiple pipe
+# operations!
 
+# What was the name of the project(s) with the highest goal?
 
-# As you've (hopefully) noticed, the `location` column includes national, 
-# state, and county level estimates. However, many audiences may only be 
-# interested in the *state* level data. Given that, you should do the following:
-# Create a new data frame that is only the *state level* observations in 2012.
-# For the sake of this analysis, you should treat Washington D.C. as a *state*
-# Write this data frame to `state_only.csv`.
 
+# What was the category of the project(s) with the lowest goal?
 
-# Which state had the **highest** drinking rate for both sexes combined? 
-# Your answer should be a *dataframe* of the state and value of interest
-# Write this data frame to `highest_state.csv`.
 
+# How many projects had a deadline in 2018?
 
-# Which state had the **lowest** drinking rate for both sexes combined?
-# Your answer should be a *dataframe* of the state and value of interest
-# Write this data frame to `lowest_state.csv`.
 
+# What proportion or projects weren't successful? Your result can be a decimal
 
-# What was the difference in prevalence between the state with the highest level
-# of consumption,and the state with the lowest level of consumption?
-# Your answer should be a single value (a dataframe storing one value is fine)
-# Store your answer in a variable called `biggest_state_diff`.
 
+# What was the amount pledged for the project with the most backers?
 
 
-# Write a function called `get_state_data` that allows you to specify a state, 
-# then saves a .csv file (`STATE_data.csv`) with observations from that state 
-# This includes data about the state, as well as the counties in the state
-# You should use the full any.drinking dataset in this function (not just 2012)
+# Of all of the projects that *failed*, what was the name of the project with
+# the highest amount of money pledged?
 
 
-# Demonstrate that you function works by passing "Utah" to the function
+# How much total money was pledged to projects that weren't successful?
 
 
-############################ Binge drinking Dataset ############################
+# Performing analysis by *grouped* observations ----------------- (38 Points)
 
-# In this section, you will ask a variety of questions regarding the 
-# `binge_drinking.csv` dataset. More specifically, you will analyze a subset of 
-# the observations of *just the counties* (exclude state/national estimates!).
-# You will store your answers in a *named list*, and at the end of the section, 
-# Convert that list to a data frame, and write the data frame to a .csv file.
-# Pay close attention to the *names* to be used in the list.
+# Which category had the most money pledged (total)?
 
 
-# Create a dataframe with only the county level observations from the 
-# `binge_driking.csv` dataset. You should (again) think of Washington D.C. as 
-# a state, and therefore *exclude it here*.
-# However, you should include "county-like" areas such as parishes and boroughs
+# Which country had the most backers?
 
 
-# Create an empty list in which to store answers to the questions below.
+# Which year had the most money pledged (hint: you may have to create a new
+# column)?
 
 
-# What is the average county level of binge drinking in 2012 for both sexes?
-# Store the number in your list as `avg_both_sexes`.
+# What were the top 3 main categories in 2018 (as ranked by number of backers)?
 
 
-# What is the name of the county with the largest increase in male binge 
-# drinking between 2002 and 2012?
-# Store the county name in your list as `largest_male_increase`.
+# What was the most common day of the week on which to launch a project?
+# (return the name of the day, e.g. "Sunday", "Monday"....)
 
 
-# How many counties experienced an increase in male binge drinking between
-# 2002 and 2012?
-# Store the number in your list as `num_male_increase`.
-
-
-# What fraction of counties experienced an increase in male binge drinking 
-# between 2002 and 2012?
-# Store the fraction (num/total) in your list as `frac_male_increase`.
-
-                    
-# How many counties experienced an increase in female binge drinking between
-# 2002 and 2012?
-# Store the number in your list as `num_female_increase`.
-
-
-# What fraction of counties experienced an increase in female binge drinking 
-# between 2002 and 2012?
-# Store the fraction (num/total) in your list as `frac_female_increase`.
-
-
-# How many counties experienced a rise in female binge drinking *and* 
-# a decline in male binge drinking?
-# Store the number in your list as `num_f_increase_m_decrease`.
-
-# Convert your list to a data frame, and write the results 
-# to the file `binge_info.csv`
-
-# The next questions return *data frames as results*:
-
-# What is the *minimum* level of binge drinking in each state in 2012 for 
-# both sexes (across the counties)? Your answer should contain roughly 50 values
-# (one for each state), unless there are two counties in a state with the 
-# same value. Your answer should be a *dataframe* with the location, state, and 
-# 2012 binge drinking rate. Write this to a file called `min_binge.csv`.
-
-
-# What is the *maximum* level of binge drinking in each state in 2012 for 
-# both sexes (across the counties)? Your answer should contain roughly 50 values
-# (one for each state), unless there are two counties in a state with the 
-# same value. Your answer should be a *dataframe* with the location, state, and 
-# 2012 binge drinking rate. Write this to a file called `max_binge.csv`.
-
-                                  
-################################# Joining Data #################################
-# You'll often have to join different datasets together in order to ask more 
-# involved questions of your dataset. In order to join our datasets together, 
-# you'll have to rename their columns to differentiate them. 
-
-
-# First, rename all prevalence columns in the any_drinking dataset to the 
-# have prefix "any_" (i.e., `males_2002` should now be `any_males_2002`)
-# Hint: you can get (and set!) column names using the colnames function. 
-# This may take multiple lines of code.
-
-
-# Then, rename all prevalence columns in the binge_drinking dataset to the have
-# the prefix "binge_" (i.e., `males_2002` should now be `binge_males_2002`)
-# This may take multiple lines of code.
-
-
-# Then, create a dataframe by joining together the both datasets. 
-# Think carefully about the *type* of join you want to do, and what the 
-# *identifying columns* are. You will use this (joined) data to answer the 
-# questions below.
-
-
-# Create a column `diff_2012` storing the difference between `any` and `binge` 
-# drinking for both sexes in 2012
-
-
-# Which location has the greatest *absolute* difference between `any` and 
-# `binge` drinking? Your answer should be a one row data frame with the state, 
-# location, and column of interest (diff_2012). 
-# Write this dataframe to `biggest_abs_diff_2012.csv`.
-
-
-# Which location has the smallest *absolute* difference between `any` and 
-# `binge` drinking? Your answer should be a one row data frame with the state, 
-# location, and column of interest (diff_2012). 
-# Write this dataframe to `smallest_abs_diff_2012.csv`.
-
-############## Write a function to ask your own question(s) ####################
-# Even in an entry level data analyst role, people are expected to come up with 
-# their own questions of interest (not just answer the questions that other 
-# people have). For this section, you should *write a function* that allows you 
-# to ask the same question on different subsets of data. For example, you may 
-# want to ask about the highest/lowest drinking level given a state or year. 
-# The purpose of your function should be evident given the input parameters and 
-# function name. After writing your function, *demonstrate* that the function 
-# works by passing in different parameters to your function.
-
-
-################################### Challenge ##################################
-
-# Using your function from part 1 that wrote a .csv file given a state name, 
-# write a separate file for each of the 51 states (including Washington D.C.)
-# The challenge is to do this in a *single line of (very concise) code*
-
-
-# Write a function that allows you to pass in a *dataframe* (i.e., in the format 
-# of binge_drinking or any_drinking) *year*, and *state* of interest. The 
-# function should saves a .csv file with observations from that state's counties
-# (and the state itself). It should only write the columns `state`, `location`, 
-# and data from the specified year. Before writing the .csv file, you should 
-# *sort* the data.frame in descending order by the both_sexes drinking rate in 
-# the specified year. The file name should have the format:
-# `DRINKING_STATE_YEAR.csv` (i.e. `any_Utah_2005.csv`).
-# To write this function, you will either have to use a combination of dplyr 
-# and base R, or confront how dplyr uses *non-standard evaluation*
-# Hint: https://github.com/tidyverse/dplyr/blob/34423af89703b0772d59edcd0f3485295b629ab0/vignettes/nse.Rmd
-# Hint: https://www.r-bloggers.com/non-standard-evaluation-and-standard-evaluation-in-dplyr/
-
-
-# Create the file `binge_Colorado_2007.csv` using your function.
+# What was the least successful day on which to launch a project? In other
+# words, which day had the lowest success rate (lowest proportion of projects
+# that were successful)? This might require some creative problem solving....
 
