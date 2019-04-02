@@ -31,10 +31,11 @@
 # the column, you should return a list with the keys:
 # - `n_values`: the number of unique values in the column
 # - `unique_values`: a vector of each unique value in the column
-# If the column is *not* numeric and there are *more* than 10 unique values in
+# If the column is *not* numeric and there are 10 or *more* unique values in
 # the column, you should return a list with the keys:
 # - `n_values`: the number of unique values in the column
-# - `unique_values`: a vector of each unique value in the column
+# - `sample_values`: a vector containing a random sample of 10 column values
+# Hint: use `typeof()` to determine the column type
 
 
 # Demonstrate that your function works by passing a column name of your choice
