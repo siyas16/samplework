@@ -1,5 +1,9 @@
 # A4 Data Wrangling
 
+# We provide this line to delete all variables in your workspace.
+# This will make it easier to test your script.
+rm(list = ls())
+
 # Loading and Exploring Data -------------------------------- (**28 points**)
 
 # To begin, you'll need to download the Kickstarter Projects data from the
@@ -8,7 +12,11 @@
 
 # Load the `dplyr` package
 
-# Load your data, making sure to not interpret strings as factors
+# We provide this code to make sure your locale is in English so that
+# files will be read correctly
+Sys.setlocale("LC_ALL", "English")
+
+# Load your data, making sure to not interpret strings as factors.
 
 
 # To start, write the code to get some basic information about the dataframe:
