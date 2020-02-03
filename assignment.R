@@ -85,6 +85,8 @@ Sys.setlocale("LC_ALL", "English")
 
 
 # How many projects had a deadline in 2018?
+# Hint: start by googling "r get year from date" and then look up more about
+# different functions you find
 
 
 # What proportion or projects weren't successful? Your result can be a decimal
@@ -122,4 +124,4 @@ Sys.setlocale("LC_ALL", "English")
 # What was the least successful day on which to launch a project? In other
 # words, which day had the lowest success rate (lowest proportion of projects
 # that were successful)? This might require some creative problem solving....
-
+# Hint: Try googling "r summarize with condition in dplyr"
