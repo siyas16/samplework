@@ -81,7 +81,7 @@ For this assignment, you must use the appropriate `dplyr` functions to complete 
     - -1 if the question doesn't use `filter` and `pull`
     - -1 if the question isn't answered correctly
 
-## Performing analysis by *grouped* observations ----------------- (38 Points)
+## Performing analysis by *grouped* observations ----------------- (30 Points)
 - Which category had the most money pledged (total)? (**5 points**)
     - 1 point for grouping
     - 1 point for computing summary information
@@ -124,11 +124,6 @@ For this assignment, you must use the appropriate `dplyr` functions to complete 
     - 1 point for returning the value of interest (day)
     - 1 point for a meaningful variable name
 
-- Write (and answer) two meaningful questions of the data that can be answered using by _grouping_ the data and performing summary calculations. (**8 points**, 4 points each)
-    - 1 point for a meaningful question
-    - 1 point for grouping
-    - 1 point for computing summary information
-    - 1 point for answering question correctly
 
 ## Code clarity (**5 points**)
 To earn full points, you must not have any `lintr()` errors. 
