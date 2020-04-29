@@ -39,7 +39,7 @@ For this assignment, you must use the appropriate `dplyr` functions to complete 
 - Take note of 3 observations that you find interesting from this summary (**3 points**)
     - 1 point for each observation, must be driven by the results of the `get_summary_info()` function
 
-## Asking question of the data ------------------- (**29 points**)
+## Asking question of the data ------------------- (**23 points**)
 - What was the name of the project(s) with the highest goal? (**3 points**)
     - -1 if result not in a vector of names
     - -1 if logic is incorrect
@@ -76,11 +76,6 @@ For this assignment, you must use the appropriate `dplyr` functions to complete 
     - -1 if result not a single value
     - -1 if logic is incorrect
     - -1 if variable name isn't meaningful
-
-- Write (and answer) two meaningful questions of the data that can be answered using similar operations (`filter`, `pull`, `summarize`, `mutate`, etc.). (**6 points**, 3 points each)
-    - -1 if question isn't relevant to the dataset
-    - -1 if the question doesn't use `filter` and `pull`
-    - -1 if the question isn't answered correctly
 
 ## Performing analysis by *grouped* observations ----------------- (31 Points)
 - Which category had the most money pledged (total)? (**5 points**)
