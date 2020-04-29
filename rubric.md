@@ -3,8 +3,9 @@ This rubric is intended to help guide expectations and increase transparency. Ho
 
 For this assignment, you must use the appropriate `dplyr` functions to complete each task, returning the specified data type. Partial credit will be given where appropriate. 
 
-## Loading and Exploring Data (**28 points**)
+## Loading and Exploring Data (**29 points**)
 - Load the `dplyr` package (**1 point**)
+- Include link to dplyr cheat sheet (**1 point**)
 - Download appropriate data into a `data/` directory (**2 points**)
     - -1 if not in the `data/` directory
 - Load your data, making sure to not interpret strings as factors (**2 points**)
@@ -81,7 +82,7 @@ For this assignment, you must use the appropriate `dplyr` functions to complete 
     - -1 if the question doesn't use `filter` and `pull`
     - -1 if the question isn't answered correctly
 
-## Performing analysis by *grouped* observations ----------------- (30 Points)
+## Performing analysis by *grouped* observations ----------------- (31 Points)
 - Which category had the most money pledged (total)? (**5 points**)
     - 1 point for grouping
     - 1 point for computing summary information
@@ -96,12 +97,13 @@ For this assignment, you must use the appropriate `dplyr` functions to complete 
     - 1 point for returning the value of interest (country)
     - 1 point for a meaningful variable name
 
-- Which year had the most money pledged (**5 points**)
+- Which year had the most money pledged (**6 points**)
     - 1 point for grouping
     - 1 point for computing summary information
     - 1 point for filtering appropriately
     - 1 point for returning the value of interest (year)
     - 1 point for a meaningful variable name
+    - 1 point for sentence on why they chose deadline or launched date
 
 - What were the top 3 main categories in 2018 (as ranked by number of backers)? (**5 points**)
     - 1 point for grouping
