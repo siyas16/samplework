@@ -4,7 +4,12 @@
 # This will make it easier to test your script.
 rm(list = ls())
 
-# Loading and Exploring Data -------------------------------- (**28 points**)
+# Loading and Exploring Data -------------------------------- (**29 points**)
+
+# First, search online for a dplyr cheatsheet and put the link to one you
+# like in the comments here:
+# - <put the link here>
+
 
 # To begin, you'll need to download the Kickstarter Projects data from the
 # Kaggle website: https://www.kaggle.com/kemical/kickstarter-projects
@@ -77,6 +82,9 @@ Sys.setlocale("LC_ALL", "English")
 # can be in a vector. Make sure to *handle NA values* throughout!
 # You should answer each question using a single statement with multiple pipe
 # operations!
+# Note: For questions about goals and pledged, use the usd_pledged_real
+# and the usd_goal_real columns, since they standardize the currancy.
+
 
 # What was the name of the project(s) with the highest goal?
 
@@ -89,7 +97,8 @@ Sys.setlocale("LC_ALL", "English")
 # different functions you find
 
 
-# What proportion or projects weren't successful? Your result can be a decimal
+# What proportion of projects weren't marked successful (such as failed or live)?
+# Your result can be a decimal
 
 
 # What was the amount pledged for the project with the most backers?
@@ -99,10 +108,10 @@ Sys.setlocale("LC_ALL", "English")
 # the highest amount of money pledged?
 
 
-# How much total money was pledged to projects that weren't successful?
+# How much total money was pledged to projects that weren't marked successful?
 
 
-# Performing analysis by *grouped* observations ----------------- (38 Points)
+# Performing analysis by *grouped* observations ----------------- (39 Points)
 
 # Which category had the most money pledged (total)?
 
@@ -112,6 +121,12 @@ Sys.setlocale("LC_ALL", "English")
 
 # Which year had the most money pledged (hint: you may have to create a new
 # column)?
+# Note: To answer this question you can choose to get the year from either
+# deadline or launched dates.
+
+
+# Write one sentance below on why you chose deadline or launched dates to
+# get the year from:
 
 
 # What were the top 3 main categories in 2018 (as ranked by number of backers)?
@@ -123,5 +138,5 @@ Sys.setlocale("LC_ALL", "English")
 
 # What was the least successful day on which to launch a project? In other
 # words, which day had the lowest success rate (lowest proportion of projects
-# that were successful)? This might require some creative problem solving....
+# that were marked successful )? This might require some creative problem solving....
 # Hint: Try googling "r summarize with condition in dplyr"
