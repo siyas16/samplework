@@ -97,7 +97,7 @@ Sys.setlocale("LC_ALL", "English")
 # different functions you find
 
 
-# What proportion of projects weren't marked successful (such as failed or live)?
+# What proportion of projects weren't marked successful (e.g., failed or live)?
 # Your result can be a decimal
 
 
@@ -138,5 +138,5 @@ Sys.setlocale("LC_ALL", "English")
 
 # What was the least successful day on which to launch a project? In other
 # words, which day had the lowest success rate (lowest proportion of projects
-# that were marked successful )? This might require some creative problem solving....
+# that were marked successful )? This might require creative problem solving...
 # Hint: Try googling "r summarize with condition in dplyr"
