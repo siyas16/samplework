@@ -7,7 +7,7 @@ rm(list = ls())
 # Loading and Exploring Data -------------------------------- (**29 points**)
 
 # First, search online for a dplyr cheatsheet and put the link to one you
-# like in the comments here:
+# like in the comments here (it's ok if the link makes the line too long):
 # - <put the link here>
 
 
@@ -111,7 +111,7 @@ Sys.setlocale("LC_ALL", "English")
 # How much total money was pledged to projects that weren't marked successful?
 
 
-# Performing analysis by *grouped* observations ----------------- (39 Points)
+# Performing analysis by *grouped* observations ----------------- (31 Points)
 
 # Which category had the most money pledged (total)?
 
