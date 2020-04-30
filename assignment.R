@@ -17,9 +17,9 @@ rm(list = ls())
 
 # Load the `dplyr` package
 
-# We provide this code to make sure your locale is in English so that
-# files will be read correctly
-Sys.setlocale("LC_ALL", "English")
+# If your computer isn't in English, you made need to use this line of code
+# to get the csv to load correctly (if the data gets messed up a few rows in):
+# Sys.setlocale("LC_ALL", "English")
 
 # Load your data, making sure to not interpret strings as factors.
 
