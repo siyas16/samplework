@@ -184,8 +184,9 @@ year_most_pledged <- kickstarters %>%
 
 # Write one sentance below on why you chose deadline or launched dates to
 # get the year from:
-# I chose to get the year from deadline because I had already done it in another
-# question and there is no difference in year if I chose launched instead.
+# I chose to get the year from deadline because I had already done it in
+# another question and because people probably pledged before the deadline so
+# it makes more sense to use those numbers.
 
 # What were the top 3 main categories in 2018 (as ranked by number of backers)?
 top_3 <- kickstarters %>%
